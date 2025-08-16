@@ -11,11 +11,9 @@ import kotlinx.coroutines.withContext
 class LocalStorageRepositoryImpl(
     private val dao: UserDao
 ): LocalStorageRepository {
-    override suspend fun getUser(): User? = withContext(Dispatchers.IO) {
+    override suspend fun getUser(): User? =
         dao.getUser()?.toDomain()
-    }
 
-    override suspend fun setUser(user: User) = withContext(Dispatchers.IO) {
+    override suspend fun setUser(user: User) =
         dao.upsertUser(user.toEntity())
-    }
 }

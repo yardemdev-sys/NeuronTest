@@ -2,6 +2,7 @@ package com.example.neurontest.app.di
 
 import android.content.Context
 import androidx.room.Room
+import com.example.data.local.dao.UserDao
 import com.example.data.local.db.NeuronTestDatabase
 import com.example.data.local.repository.LocalStorageRepositoryImpl
 import com.example.domain.repository.LocalStorageRepository
@@ -10,13 +11,13 @@ import com.example.domain.usecase.SetUserUseCase
 import org.koin.dsl.module
 
 val localStorageModule = module {
-    single {
+    single<NeuronTestDatabase> {
         Room.databaseBuilder(
             get<Context>(), NeuronTestDatabase::class.java, "NeuronTest.db"
         ).build()
     }
 
-    single {
+    single<UserDao> {
         get<NeuronTestDatabase>().userDao()
     }
 
@@ -24,11 +25,11 @@ val localStorageModule = module {
         LocalStorageRepositoryImpl(get())
     }
 
-    factory {
+    factory<GetUserUseCase> {
         GetUserUseCase(get())
     }
 
-    factory {
+    factory<SetUserUseCase> {
         SetUserUseCase(get())
     }
 }

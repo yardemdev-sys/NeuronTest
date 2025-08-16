@@ -4,6 +4,7 @@ import android.app.Application
 import com.example.neurontest.app.di.localStorageModule
 import com.example.neurontest.app.di.viewModelModule
 import org.koin.android.ext.koin.androidContext
+import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.startKoin
 
 class NeuronTestApp: Application() {
@@ -11,6 +12,7 @@ class NeuronTestApp: Application() {
         super.onCreate()
 
         startKoin {
+            androidLogger()
             androidContext(this@NeuronTestApp)
             modules(localStorageModule, viewModelModule)
         }
