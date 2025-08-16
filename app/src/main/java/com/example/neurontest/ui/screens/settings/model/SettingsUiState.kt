@@ -4,10 +4,11 @@ import androidx.annotation.StringRes
 import com.example.neurontest.R
 
 data class SettingsUiState(
+    val isSaving: Boolean = false,
     val isNameLoading: Boolean = true,
     val isAuth: Boolean = false,
-    val firstName: String? = null,
-    val lastName: String? = null,
+    val firstName: String = "",
+    val lastName: String = "",
     /*
         Для почты, языка и номера телефона используются плейсхолдеры,
         так как их неоткуда получать
@@ -18,5 +19,5 @@ data class SettingsUiState(
     // Сохраненные настройки неизвестны - по-уолчанию false
     val isBiometricalAuthEnabled: Boolean = false,
     @StringRes val language: Int = R.string.language,
-    val errorMsg: String? = null
+    val isNameLoadError: Boolean = false
 )

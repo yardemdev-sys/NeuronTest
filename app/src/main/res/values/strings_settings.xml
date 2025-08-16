@@ -12,4 +12,7 @@
     <string name="russian">русский</string>
     <string name="email_placeholder">placeholder@mail.ru</string>
     <string name="phone_placeholder">+7 (999) 999 99 99</string>
+    <string name="load_error">Не удалось загрузить данные</string>
+    <string name="get_user_error">Ошибка получения данных о пользователе</string>
+    <string name="update_user_error">Ошибка обновления данных о пользователе</string>
 </resources>

@@ -12,4 +12,10 @@ interface UserDao {
 
     @Upsert
     suspend fun upsertUser(user: UserEntity)
+
+    @Query("UPDATE user SET firstName = :firstName, lastName = :lastName WHERE id = 1")
+    suspend fun updateUserName(
+        firstName: String,
+        lastName: String
+    )
 }

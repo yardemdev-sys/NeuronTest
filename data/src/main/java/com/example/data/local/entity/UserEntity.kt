@@ -10,7 +10,7 @@ data class UserEntity(
         поэтому я использую фиксированный id = 1
      */
     @PrimaryKey val id: Int = 1,
-    val bankNumber: Int,
+    val bankNumber: String,
     val bankCode: Int,
     val firstName: String,
     val lastName: String

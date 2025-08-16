@@ -6,4 +6,9 @@ interface LocalStorageRepository {
     suspend fun getUser(): User?
 
     suspend fun setUser(user: User)
+
+    suspend fun updateUserName(
+        firstName: String,
+        lastName: String
+    )
 }

@@ -5,7 +5,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.example.neurontest.ui.screens.settings.components.Settings
+import com.example.neurontest.ui.screens.settings.components.SettingsScreen
 
 @Composable
 fun AppNavGraph(
@@ -16,7 +16,7 @@ fun AppNavGraph(
         startDestination = "settings"
     ) {
         composable("settings") {
-            Settings(
+            SettingsScreen(
                 onNavigateRegister = { navController.navigate("registration") },
                 onBack = { navController.popBackStack() }
             )

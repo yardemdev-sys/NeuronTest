@@ -16,4 +16,8 @@ class LocalStorageRepositoryImpl(
 
     override suspend fun setUser(user: User) =
         dao.upsertUser(user.toEntity())
+
+    override suspend fun updateUserName(firstName: String, lastName: String) {
+        dao.updateUserName(firstName, lastName)
+    }
 }
