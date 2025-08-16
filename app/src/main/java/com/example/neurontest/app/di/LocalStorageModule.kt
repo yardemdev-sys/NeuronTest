@@ -7,9 +7,7 @@ import com.example.data.local.repository.LocalStorageRepositoryImpl
 import com.example.domain.repository.LocalStorageRepository
 import com.example.domain.usecase.GetUserUseCase
 import com.example.domain.usecase.SetUserUseCase
-import com.example.neurontest.ui.theme.NeuronTestTheme
 import org.koin.dsl.module
-import kotlin.math.sin
 
 val localStorageModule = module {
     single {
