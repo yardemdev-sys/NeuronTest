@@ -14,12 +14,20 @@ android {
         targetSdk = 36
         versionCode = 1
         versionName = "1.0"
-
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
     buildTypes {
+        debug {
+            applicationIdSuffix = ".debug"
+            versionNameSuffix = "-debug"
+            isDebuggable = true
+            buildConfigField("String", "FAKE_USER_MODE", "\"SUCCESS\"")
+        }
+
         release {
+            // Временная подпись для "чистой" сборки
+            signingConfig = signingConfigs.getByName("debug")
             isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
@@ -33,9 +41,11 @@ android {
     }
     kotlinOptions {
         jvmTarget = "11"
+        freeCompilerArgs = listOf("-XXLanguage:+PropertyParamAnnotationDefaultTargetMode")
     }
     buildFeatures {
         compose = true
+        buildConfig = true
     }
 }
 
@@ -63,4 +73,6 @@ dependencies {
     implementation(libs.koin)
     implementation(libs.koinAndroid)
     implementation(libs.koinCompose)
+
+    implementation(libs.composeNavigation)
 }

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="unauthorised">Вы не авторизованы</string>
+    <string name="my_purchases">Мои покупки</string>
+    <string name="settings">Настройки</string>
+    <string name="confirmation_required">Необходимо подтвердить</string>
+    <string name="email">E-mail</string>
+    <string name="biometrical_auth">Вход по биометрии</string>
+    <string name="change_code">Сменить 4-х значный код</string>
+    <string name="clients_registration">Регистрация для клиентов банка</string>
+    <string name="language">Язык</string>
+    <string name="russian">русский</string>
+    <string name="email_placeholder">placeholder@mail.ru</string>
+    <string name="phone_placeholder">+7 (999) 999 99 99</string>
+    <string name="load_error">Не удалось загрузить данные</string>
+    <string name="get_user_error">Ошибка получения данных о пользователе</string>
+    <string name="update_user_error">Ошибка обновления данных о пользователе</string>
+</resources>
