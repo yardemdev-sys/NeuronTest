@@ -44,5 +44,5 @@ dependencies {
     androidTestImplementation(libs.androidx.espresso.core)
 
     // Room
-    implementation(libs.room)
+    api(libs.room)
 }
