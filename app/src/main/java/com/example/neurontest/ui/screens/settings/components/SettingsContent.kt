@@ -1,11 +1,15 @@
 package com.example.neurontest.ui.screens.settings.components
 
+import androidx.compose.foundation.gestures.Orientation
+import androidx.compose.foundation.gestures.scrollable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.systemBarsPadding
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -30,15 +34,18 @@ internal fun SettingsContent(
     onRegister: () -> Unit,
     onLanguage: () -> Unit
 ) {
+    val scroll = rememberScrollState()
     Column(
         modifier = Modifier
             .systemBarsPadding()
-            .padding(horizontal = 16.dp, vertical = 4.dp),
+            .padding(horizontal = 16.dp, vertical = 4.dp)
+            // Для маленьких экранов
+            .verticalScroll(scroll),
         verticalArrangement = Arrangement.spacedBy(10.dp)
     ) {
         ReturnButton(onClick = onBack)
 
-        Spacer(Modifier.size(10.dp))
+        Spacer(Modifier.size(20.dp))
 
         UserHeader(state, onChangeName, onNameSave)
 
