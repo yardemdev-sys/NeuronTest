@@ -21,4 +21,5 @@ dependencyResolutionManagement {
 
 rootProject.name = "NeuronTest"
 include(":app")
- 
+include(":domain")
+include(":data")

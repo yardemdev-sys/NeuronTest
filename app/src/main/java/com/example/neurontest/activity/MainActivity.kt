@@ -1,4 +1,4 @@
-package com.example.neurontest
+package com.example.neurontest.activity
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
