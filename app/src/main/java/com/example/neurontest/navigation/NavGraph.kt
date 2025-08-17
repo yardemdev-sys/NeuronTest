@@ -5,7 +5,13 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.example.neurontest.ui.screens.registration.components.Registration
 import com.example.neurontest.ui.screens.settings.components.SettingsScreen
+
+private object Routes {
+    const val SETTINGS = "settings"
+    const val REGISTRATION = "registration"
+}
 
 @Composable
 fun AppNavGraph(
@@ -13,17 +19,30 @@ fun AppNavGraph(
 ) {
     NavHost(
         navController = navController,
-        startDestination = "settings"
+        startDestination = Routes.SETTINGS
     ) {
-        composable("settings") {
+        composable(Routes.SETTINGS) {
             SettingsScreen(
-                onNavigateRegister = { navController.navigate("registration") },
+                onNavigateRegister = {
+                    navController.navigate(Routes.REGISTRATION) {
+                        launchSingleTop = true
+                    }
+                },
                 onBack = { navController.popBackStack() }
             )
         }
 
-        composable("registration") {
-
+        composable(Routes.REGISTRATION) {
+            Registration(
+                onBack = { navController.popBackStack() },
+                onNavigateSettings = {
+                    navController.navigate(Routes.SETTINGS) {
+                        popUpTo(Routes.REGISTRATION) { inclusive = true }
+                        launchSingleTop = true
+                        restoreState = true
+                    }
+                }
+            )
         }
     }
 }

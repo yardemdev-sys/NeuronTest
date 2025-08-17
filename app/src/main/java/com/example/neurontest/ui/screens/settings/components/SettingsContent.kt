@@ -1,7 +1,5 @@
 package com.example.neurontest.ui.screens.settings.components
 
-import androidx.compose.foundation.gestures.Orientation
-import androidx.compose.foundation.gestures.scrollable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -53,8 +51,8 @@ internal fun SettingsContent(
             SectionTitle(text = stringResource(R.string.my_purchases))
             ImageRow(
                 image = R.drawable.purchases_image,
-                right = { Chevron() },
-                onClick = { /* TODO: навигация к покупкам */ }
+                right = { Arrow() },
+                onClick = { onPurchases }
             )
             Spacer(Modifier.size(10.dp))
         }
@@ -77,7 +75,7 @@ internal fun SettingsContent(
                             color = MaterialTheme.colorScheme.error
                         )
                     }
-                    Chevron()
+                    Arrow()
                 },
                 onClick = onEmail
             )
@@ -90,14 +88,14 @@ internal fun SettingsContent(
 
             ArrowRow(
                 title = stringResource(R.string.change_code),
-                right = { Chevron() },
+                right = { Arrow() },
                 onClick = onChangeCode
             )
         }
 
         ArrowRow(
             title = stringResource(R.string.clients_registration),
-            right = { Chevron() },
+            right = { Arrow() },
             onClick = onRegister
         )
 
@@ -109,7 +107,7 @@ internal fun SettingsContent(
                     fontSize = 16.sp,
                     color = MaterialTheme.colorScheme.onPrimary
                 )
-                Chevron()
+                Arrow()
             },
             onClick = onLanguage
         )
