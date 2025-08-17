@@ -53,7 +53,7 @@ internal fun SettingsContent(
             ImageRow(
                 image = R.drawable.purchases_image,
                 right = { Arrow() },
-                onClick = { onPurchases }
+                onClick = onPurchases
             )
             Spacer(Modifier.size(10.dp))
         }

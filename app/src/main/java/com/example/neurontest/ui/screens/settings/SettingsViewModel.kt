@@ -1,11 +1,10 @@
 package com.example.neurontest.ui.screens.settings
 
-import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.domain.usecase.DeleteUserUseCase
-import com.example.domain.usecase.GetUserUseCase
-import com.example.domain.usecase.UpdateUserNameUseCase
+import com.example.domain.usecase.local.DeleteUserUseCase
+import com.example.domain.usecase.local.GetUserUseCase
+import com.example.domain.usecase.local.UpdateUserNameUseCase
 import com.example.neurontest.ui.screens.settings.model.SettingsEffect
 import com.example.neurontest.ui.screens.settings.model.SettingsIntent
 import com.example.neurontest.ui.screens.settings.model.SettingsUiState
@@ -106,7 +105,6 @@ class SettingsViewModel(
                 )
             }
         }.onFailure {
-            Log.e("RESULT", result.toString())
             _uiState.update { it.copy(isNameLoadError = true, isNameLoading = false) }
             _uiEffect.emit(SettingsEffect.ShowLoadingError)
         }

@@ -5,12 +5,14 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.example.neurontest.ui.screens.purchases.components.Purchases
 import com.example.neurontest.ui.screens.registration.components.Registration
 import com.example.neurontest.ui.screens.settings.components.SettingsScreen
 
 private object Routes {
     const val SETTINGS = "settings"
     const val REGISTRATION = "registration"
+    const val PURCHASES = "purchases"
 }
 
 @Composable
@@ -28,7 +30,9 @@ fun AppNavGraph(
                         launchSingleTop = true
                     }
                 },
-                onBack = { navController.popBackStack() }
+                onNavigatePurchases = {
+                    navController.navigate(Routes.PURCHASES)
+                }
             )
         }
 
@@ -42,6 +46,12 @@ fun AppNavGraph(
                         restoreState = false
                     }
                 }
+            )
+        }
+
+        composable("purchases") {
+            Purchases(
+                onBack = { navController.popBackStack() }
             )
         }
     }

@@ -10,7 +10,7 @@ android {
 
     defaultConfig {
         applicationId = "com.example.neurontest"
-        minSdk = 24
+        minSdk = 26
         targetSdk = 36
         versionCode = 1
         versionName = "1.0"
@@ -18,6 +18,15 @@ android {
     }
 
     buildTypes {
+        release {
+            signingConfig = signingConfigs.getByName("debug")
+            isMinifyEnabled = false
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
+        }
+
         debug {
             applicationIdSuffix = ".debug"
             versionNameSuffix = "-debug"
@@ -25,14 +34,10 @@ android {
             buildConfigField("String", "FAKE_USER_MODE", "\"SUCCESS\"")
         }
 
-        release {
-            // Временная подпись для "чистой" сборки
-            signingConfig = signingConfigs.getByName("debug")
-            isMinifyEnabled = false
-            proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
-            )
+        buildTypes.configureEach {
+            if (name == "release") {
+                isDefault = true
+            }
         }
     }
     compileOptions {
