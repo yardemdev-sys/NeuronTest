@@ -32,7 +32,8 @@ internal fun Arrow() {
 internal fun ArrowRow(
     title: String?,
     right: @Composable RowScope.() -> Unit,
-    onClick: () -> Unit
+    onClick: () -> Unit,
+    modifier: Modifier = Modifier
 ) {
     SettingItem(
         leftSlot = {
@@ -40,7 +41,9 @@ internal fun ArrowRow(
                 Text(
                     text = it,
                     fontSize = 18.sp,
-                    color = MaterialTheme.colorScheme.onSecondary
+                    maxLines = 2,
+                    color = MaterialTheme.colorScheme.onSecondary,
+                    modifier = modifier
                 )
             }
         },

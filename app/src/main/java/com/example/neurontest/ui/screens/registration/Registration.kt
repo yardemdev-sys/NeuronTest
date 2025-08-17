@@ -1,4 +1,4 @@
-package com.example.neurontest.ui.screens.registration.components
+package com.example.neurontest.ui.screens.registration
 
 import android.widget.Toast
 import androidx.compose.runtime.Composable
@@ -7,7 +7,7 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.platform.LocalContext
 import com.example.neurontest.R
-import com.example.neurontest.ui.screens.registration.RegistrationViewModel
+import com.example.neurontest.ui.screens.registration.components.RegistrationContent
 import com.example.neurontest.ui.screens.registration.model.RegistrationEffect
 import com.example.neurontest.ui.screens.registration.model.RegistrationIntent
 import org.koin.androidx.compose.koinViewModel

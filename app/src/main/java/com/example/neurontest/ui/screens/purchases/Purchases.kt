@@ -1,4 +1,4 @@
-package com.example.neurontest.ui.screens.purchases.components
+package com.example.neurontest.ui.screens.purchases
 
 import android.widget.Toast
 import androidx.compose.foundation.layout.Arrangement
@@ -18,7 +18,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import com.example.neurontest.R
 import com.example.neurontest.ui.components.ReturnButton
-import com.example.neurontest.ui.screens.purchases.PurchasesViewModel
+import com.example.neurontest.ui.screens.purchases.components.SectionsList
 import com.example.neurontest.ui.screens.purchases.models.PurchasesEffect
 import org.koin.androidx.compose.koinViewModel
 
