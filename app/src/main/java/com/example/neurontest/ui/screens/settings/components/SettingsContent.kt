@@ -6,6 +6,7 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.systemBarsPadding
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.MaterialTheme
@@ -38,7 +39,6 @@ internal fun SettingsContent(
         modifier = Modifier
             .systemBarsPadding()
             .padding(horizontal = 16.dp, vertical = 4.dp)
-            // Для маленьких экранов
             .verticalScroll(scroll),
         verticalArrangement = Arrangement.spacedBy(10.dp)
     ) {
@@ -98,7 +98,8 @@ internal fun SettingsContent(
             ArrowRow(
                 title = stringResource(R.string.clients_registration),
                 right = { Arrow() },
-                onClick = onRegister
+                onClick = onRegister,
+                modifier = Modifier.width(200.dp)
             )
         } else {
             ArrowRow(

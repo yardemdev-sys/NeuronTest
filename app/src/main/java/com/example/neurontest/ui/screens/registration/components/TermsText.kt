@@ -24,6 +24,7 @@ fun TermsText(onTermsClick: () -> Unit) {
     val tag = "terms"
     val annotated = buildAnnotatedString {
         append(stringResource(R.string.terms))
+        append(" ")
         pushStringAnnotation(tag = tag, annotation = "terms")
         withStyle(
             SpanStyle(

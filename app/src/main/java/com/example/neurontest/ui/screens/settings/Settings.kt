@@ -1,4 +1,4 @@
-package com.example.neurontest.ui.screens.settings.components
+package com.example.neurontest.ui.screens.settings
 
 import android.widget.Toast
 import androidx.compose.runtime.Composable
@@ -7,7 +7,7 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.platform.LocalContext
 import com.example.neurontest.R
-import com.example.neurontest.ui.screens.settings.SettingsViewModel
+import com.example.neurontest.ui.screens.settings.components.SettingsContent
 import com.example.neurontest.ui.screens.settings.model.SettingsEffect
 import com.example.neurontest.ui.screens.settings.model.SettingsIntent
 import org.koin.androidx.compose.koinViewModel

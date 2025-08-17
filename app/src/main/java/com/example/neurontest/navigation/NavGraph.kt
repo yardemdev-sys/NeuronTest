@@ -5,9 +5,9 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.example.neurontest.ui.screens.purchases.components.Purchases
-import com.example.neurontest.ui.screens.registration.components.Registration
-import com.example.neurontest.ui.screens.settings.components.SettingsScreen
+import com.example.neurontest.ui.screens.purchases.Purchases
+import com.example.neurontest.ui.screens.registration.Registration
+import com.example.neurontest.ui.screens.settings.SettingsScreen
 
 private object Routes {
     const val SETTINGS = "settings"
