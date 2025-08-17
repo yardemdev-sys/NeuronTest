@@ -9,6 +9,7 @@ import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
+import kotlinx.coroutines.flow.flowOn
 import kotlinx.serialization.json.Json
 
 class PurchaseRepositoryImpl: PurchaseRepository {
@@ -57,5 +58,5 @@ class PurchaseRepositoryImpl: PurchaseRepository {
     override fun getPurchases(): Flow<List<Purchase>> = flow {
         val root = Json.decodeFromString<Root>(rawJson)
         emit(root.data.map { it.toDomain() })
-    }
+    }.flowOn(Dispatchers.IO)
 }

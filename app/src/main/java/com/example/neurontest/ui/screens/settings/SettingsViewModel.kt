@@ -106,7 +106,6 @@ class SettingsViewModel(
                 )
             }
         }.onFailure {
-            Log.e("RESULT", result.toString())
             _uiState.update { it.copy(isNameLoadError = true, isNameLoading = false) }
             _uiEffect.emit(SettingsEffect.ShowLoadingError)
         }
