@@ -6,6 +6,7 @@ import com.example.data.local.dao.UserDao
 import com.example.data.local.db.NeuronTestDatabase
 import com.example.data.local.repository.LocalStorageRepositoryImpl
 import com.example.domain.repository.LocalStorageRepository
+import com.example.domain.usecase.DeleteUserUseCase
 import com.example.domain.usecase.GetUserUseCase
 import com.example.domain.usecase.SetUserUseCase
 import com.example.domain.usecase.UpdateUserNameUseCase
@@ -36,5 +37,9 @@ val localStorageModule = module {
 
     factory<UpdateUserNameUseCase> {
         UpdateUserNameUseCase(get())
+    }
+
+    factory<DeleteUserUseCase> {
+        DeleteUserUseCase(get())
     }
 }

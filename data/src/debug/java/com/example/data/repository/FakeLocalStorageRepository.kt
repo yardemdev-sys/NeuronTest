@@ -28,4 +28,7 @@ class FakeLocalStorageRepository(
             else -> Unit
         }
     }
+
+    override suspend fun deleteUser() {
+    }
 }

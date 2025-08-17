@@ -20,4 +20,9 @@ class LocalStorageRepositoryImpl(
     override suspend fun updateUserName(firstName: String, lastName: String) {
         dao.updateUserName(firstName, lastName)
     }
+
+    override suspend fun deleteUser() {
+        dao.deleteUser()
+    }
+
 }

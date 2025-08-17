@@ -29,6 +29,8 @@ fun SettingsScreen(
                     Toast.makeText(context, R.string.get_user_error, Toast.LENGTH_LONG).show()
                 SettingsEffect.ShowUpdateError ->
                     Toast.makeText(context, R.string.update_user_error, Toast.LENGTH_LONG).show()
+
+                SettingsEffect.Logout -> vm.logout()
             }
         }
     }
@@ -49,6 +51,9 @@ fun SettingsScreen(
         },
         onChangeCode = {},
         onRegister = onNavigateRegister,
-        onLanguage = {}
+        onLanguage = {},
+        onLogout = {
+            vm.performIntent(SettingsIntent.Logout)
+        }
     )
 }

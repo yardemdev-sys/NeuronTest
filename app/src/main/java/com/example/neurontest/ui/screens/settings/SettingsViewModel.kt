@@ -3,6 +3,7 @@ package com.example.neurontest.ui.screens.settings
 import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.domain.usecase.DeleteUserUseCase
 import com.example.domain.usecase.GetUserUseCase
 import com.example.domain.usecase.UpdateUserNameUseCase
 import com.example.neurontest.ui.screens.settings.model.SettingsEffect
@@ -21,6 +22,7 @@ import kotlinx.coroutines.withContext
 class SettingsViewModel(
     private val getUser: GetUserUseCase,
     private val updateUserName: UpdateUserNameUseCase,
+    private val deleteUser: DeleteUserUseCase,
     private val io: CoroutineDispatcher = Dispatchers.IO
 ) : ViewModel() {
 
@@ -87,6 +89,9 @@ class SettingsViewModel(
         SettingsIntent.ShowUpdateError -> {
             _uiEffect.emit(SettingsEffect.ShowUpdateError)
         }
+
+        SettingsIntent.Logout ->
+            _uiEffect.emit(SettingsEffect.Logout)
     }
 
     private suspend fun loadUser() {
@@ -104,6 +109,13 @@ class SettingsViewModel(
             Log.e("RESULT", result.toString())
             _uiState.update { it.copy(isNameLoadError = true, isNameLoading = false) }
             _uiEffect.emit(SettingsEffect.ShowLoadingError)
+        }
+    }
+
+    fun logout() {
+        viewModelScope.launch(io) {
+            deleteUser()
+            loadUser()
         }
     }
 }
