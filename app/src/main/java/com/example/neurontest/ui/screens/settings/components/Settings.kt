@@ -17,7 +17,6 @@ import org.koin.androidx.compose.koinViewModel
 fun SettingsScreen(
     onNavigateRegister: () -> Unit,
     onNavigatePurchases: () -> Unit,
-    onBack: () -> Unit,
     vm: SettingsViewModel = koinViewModel()
 ) {
     val state by vm.uiState.collectAsState()
@@ -44,7 +43,7 @@ fun SettingsScreen(
         onNameSave = { first, last ->
             vm.performIntent(SettingsIntent.OnSaveName(first, last))
         },
-        onBack = onBack,
+        onBack = {},
         onPurchases = onNavigatePurchases,
         onEmail = { },
         onBiometricToggle = { enabled ->

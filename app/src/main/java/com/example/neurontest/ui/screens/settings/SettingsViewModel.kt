@@ -1,6 +1,5 @@
 package com.example.neurontest.ui.screens.settings
 
-import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.domain.usecase.local.DeleteUserUseCase

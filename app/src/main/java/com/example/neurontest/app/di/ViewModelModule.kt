@@ -3,7 +3,6 @@ package com.example.neurontest.app.di
 import com.example.neurontest.ui.screens.purchases.PurchasesViewModel
 import com.example.neurontest.ui.screens.registration.RegistrationViewModel
 import com.example.neurontest.ui.screens.settings.SettingsViewModel
-import kotlinx.coroutines.CoroutineDispatcher
 import org.koin.core.module.dsl.viewModel
 import org.koin.dsl.module
 

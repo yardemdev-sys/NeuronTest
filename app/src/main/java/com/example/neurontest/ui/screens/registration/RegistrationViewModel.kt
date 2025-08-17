@@ -73,7 +73,6 @@ class RegistrationViewModel(
 
     private fun saveUser() {
         viewModelScope.launch(io) {
-            val result =
             runCatching { saveUser(_uiState.value.toDomain()) }
                 .onSuccess { _uiEffect.emit(RegistrationEffect.SaveUser) }
                 .onFailure { _uiEffect.emit(RegistrationEffect.ShowSaveError) }

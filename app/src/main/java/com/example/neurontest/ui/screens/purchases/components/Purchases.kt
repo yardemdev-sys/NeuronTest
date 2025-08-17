@@ -41,7 +41,6 @@ internal fun Purchases(
                         Toast.LENGTH_LONG
                     ).show()
                 }
-                else -> Unit
             }
         }
     }
