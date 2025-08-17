@@ -2,7 +2,7 @@ package com.example.neurontest.ui.screens.registration
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.domain.usecase.SetUserUseCase
+import com.example.domain.usecase.local.SetUserUseCase
 import com.example.neurontest.ui.screens.registration.mappers.toDomain
 import com.example.neurontest.ui.screens.registration.model.RegistrationEffect
 import com.example.neurontest.ui.screens.registration.model.RegistrationIntent

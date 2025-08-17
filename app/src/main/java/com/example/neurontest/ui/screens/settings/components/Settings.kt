@@ -16,6 +16,7 @@ import org.koin.androidx.compose.koinViewModel
 @Composable
 fun SettingsScreen(
     onNavigateRegister: () -> Unit,
+    onNavigatePurchases: () -> Unit,
     onBack: () -> Unit,
     vm: SettingsViewModel = koinViewModel()
 ) {
@@ -44,7 +45,7 @@ fun SettingsScreen(
             vm.performIntent(SettingsIntent.OnSaveName(first, last))
         },
         onBack = onBack,
-        onPurchases = { },
+        onPurchases = onNavigatePurchases,
         onEmail = { },
         onBiometricToggle = { enabled ->
             vm.performIntent(SettingsIntent.BiometricalAuthToggle(enabled))

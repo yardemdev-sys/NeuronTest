@@ -1,4 +1,4 @@
-package com.example.domain.usecase
+package com.example.domain.usecase.local
 
 import com.example.domain.repository.LocalStorageRepository
 

@@ -14,6 +14,7 @@ koin = "4.1.0"
 room = "2.7.2"
 composeNavigation = "2.9.3"
 ksp = "2.2.0-2.0.2"
+serialisation = "1.7.3"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -39,6 +40,8 @@ composeNavigation = { group = "androidx.navigation", name = "navigation-compose"
 room-runtime = { group = "androidx.room", name = "room-runtime", version.ref = "room" }
 room-ktx = { group = "androidx.room", name = "room-ktx", version.ref = "room" }
 room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "room" }
+serialisation = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "serialisation"}
+
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

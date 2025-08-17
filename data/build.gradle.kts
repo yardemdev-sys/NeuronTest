@@ -47,4 +47,6 @@ dependencies {
     api(libs.room.runtime)
     api(libs.room.ktx)
     ksp(libs.room.compiler)
+
+    implementation(libs.serialisation)
 }
