@@ -11,4 +11,6 @@ interface LocalStorageRepository {
         firstName: String,
         lastName: String
     )
+
+    suspend fun deleteUser()
 }

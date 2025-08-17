@@ -30,7 +30,8 @@ internal fun SettingsContent(
     onBiometricToggle: (Boolean) -> Unit,
     onChangeCode: () -> Unit,
     onRegister: () -> Unit,
-    onLanguage: () -> Unit
+    onLanguage: () -> Unit,
+    onLogout: () -> Unit
 ) {
     val scroll = rememberScrollState()
     Column(
@@ -93,11 +94,19 @@ internal fun SettingsContent(
             )
         }
 
-        ArrowRow(
-            title = stringResource(R.string.clients_registration),
-            right = { Arrow() },
-            onClick = onRegister
-        )
+        if (!state.isAuth) {
+            ArrowRow(
+                title = stringResource(R.string.clients_registration),
+                right = { Arrow() },
+                onClick = onRegister
+            )
+        } else {
+            ArrowRow(
+                title = stringResource(R.string.logout),
+                right = { Arrow() },
+                onClick = onLogout
+            )
+        }
 
         ArrowRow(
             title = stringResource(R.string.language),

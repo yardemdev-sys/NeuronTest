@@ -12,6 +12,7 @@ sealed class SettingsIntent {
     data class BiometricalAuthToggle(val enabled: Boolean): SettingsIntent()
 
     object Init: SettingsIntent()
+    object Logout: SettingsIntent()
     object ShowLoadingError: SettingsIntent()
     object ShowUpdateError: SettingsIntent()
 }

@@ -37,9 +37,9 @@ fun AppNavGraph(
                 onBack = { navController.popBackStack() },
                 onNavigateSettings = {
                     navController.navigate(Routes.SETTINGS) {
-                        popUpTo(Routes.REGISTRATION) { inclusive = true }
+                        popUpTo(Routes.SETTINGS) { inclusive = true }
                         launchSingleTop = true
-                        restoreState = true
+                        restoreState = false
                     }
                 }
             )
