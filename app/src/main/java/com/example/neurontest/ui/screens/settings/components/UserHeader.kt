@@ -43,7 +43,11 @@ internal fun UserHeader(
     if (state.isNameLoadError) {
         Text(
             text = stringResource(R.string.load_error),
-            fontSize = 28.sp
+            fontSize = 32.sp,
+            style = MaterialTheme.typography.bodyLarge.copy(
+                lineHeight = 40.sp,
+            ),
+            fontWeight = FontWeight.Bold,
         )
     } else if (state.isNameLoading) {
         CircularProgressIndicator()
@@ -111,7 +115,11 @@ internal fun UserHeader(
     } else {
         Text(
             text = stringResource(R.string.unauthorised),
-            fontSize = 28.sp
+            fontSize = 32.sp,
+            style = MaterialTheme.typography.bodyLarge.copy(
+                lineHeight = 40.sp,
+            ),
+            fontWeight = FontWeight.Bold,
         )
     }
 }

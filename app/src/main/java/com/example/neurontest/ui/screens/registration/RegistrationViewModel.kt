@@ -66,14 +66,15 @@ class RegistrationViewModel(
 
     private fun checkContinueEnabled() {
         val s = _uiState.value
-        val enabled = !s.isCodeError && !s.isBankNumberError && !s.isFirstNameError && !s.isLastNameError
+        val notEmpty = s.bankNumber.isNotBlank() && s.code.isNotBlank() && s.firstName.isNotBlank() && s.lastName.isNotBlank()
+        val enabled = !s.isCodeError && !s.isBankNumberError && !s.isFirstNameError && !s.isLastNameError && notEmpty
         _uiState.update { it.copy(isContinueButtonActive = enabled) }
     }
 
     private fun saveUser() {
         viewModelScope.launch(io) {
             runCatching { saveUser(_uiState.value.toDomain()) }
-                .onSuccess { _uiEffect.emit(RegistrationEffect.NavigateBack) }
+                .onSuccess { _uiEffect.emit(RegistrationEffect.SaveUser) }
                 .onFailure { _uiEffect.emit(RegistrationEffect.ShowSaveError) }
         }
     }

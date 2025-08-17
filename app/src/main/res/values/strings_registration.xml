@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="save_error">Ошибка сохранения данных</string>
+    <string name="invalid_input">Некорректные данные</string>
+    <string name="number_supporting_text">Номер из 16 цифр, который вы получили от банка</string>
+    <string name="number_placeholder">Номер участника</string>
+    <string name="code_supporting_text">Код, который вы получили от банка</string>
+    <string name="code_placeholder">Код</string>
+    <string name="first_name_supporting_text">Имя (на латинице, как в загранпаспорте)</string>
+    <string name="first_name_placeholder">Имя</string>
+    <string name="last_name_supporting_text">Фамилия (на латинице, как в загранпаспорте)</string>
+    <string name="last_name_placeholder">Фамилия</string>
+    <string name="terms">Нажимая кнопку продолжить,\n вы соглашаетесь </string>
+    <string name="terms_link">с условиями участия</string>
+    <string name="cont">Продолжить</string>
+    <string name="terms_placeholder">Здесь должны быть пользовательские соглашения</string>
+</resources>

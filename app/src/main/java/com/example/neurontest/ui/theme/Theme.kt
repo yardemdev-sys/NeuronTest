@@ -2,7 +2,6 @@ package com.example.neurontest.ui.theme
 
 import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme
-import androidx.compose.material3.Badge
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.darkColorScheme
 import androidx.compose.material3.dynamicDarkColorScheme
@@ -18,7 +17,7 @@ private val LightColorScheme = lightColorScheme(
     primary = White,
     onSurface = White,
     secondary = PurpleGrey40,
-    onSecondary = Gray,
+    onSecondary = LightGray,
     tertiary = Pink40,
     surface = Purple60,
     surfaceContainerHighest = Purple30,
